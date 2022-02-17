@@ -165,7 +165,7 @@ function CreateListing() {
       ...formData,
       imgUrls,
       geolocation,
-      timeStamp: serverTimestamp(),
+      timestamp: serverTimestamp(),
     }
 
     delete formDataCopy.images
