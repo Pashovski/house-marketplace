@@ -10,6 +10,7 @@ function Contact() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const params = useParams();
+  console.log(params.landlordId);
 
   useEffect(() => {
     const getLandlord = async () => {
