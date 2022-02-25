@@ -56,6 +56,7 @@ function Profile() {
       setListings(listings)
       setLoading(false)
     }
+    fetchUserListings()
   }, [auth.currentUser.uid])
 
   const onLogout = () => {
@@ -101,8 +102,6 @@ function Profile() {
   }
 
   const onEdit = (listingId) => navigate(`/edit-listing/${listingId}`)
-
-  console.log(listingId)
 
   return (
     <div className='profile'>
