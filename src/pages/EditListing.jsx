@@ -14,6 +14,7 @@ import { toast } from 'react-toastify'
 import { v4 as uuidv4 } from 'uuid'
 
 function EditListing() {
+  // eslint-disable-next-line
   const [geolocationEnabled, setGeolocationEnabled] = useState(true)
   const [loading, setLoading] = useState(false)
   const [listing, setListing] = useState(false)
@@ -79,7 +80,7 @@ function EditListing() {
     }
 
     fetchListing()
-  }, [])
+  }, [navigate, params.listingId])
 
   // Sets userRef to logged in user
 
@@ -167,6 +168,8 @@ function EditListing() {
               case 'running':
                 console.log('Upload is running')
                 break
+              default:
+                break
             }
           },
           (error) => {
@@ -250,7 +253,7 @@ function EditListing() {
           <div className='formButtons'>
             <button
               type='button'
-              className={type == 'sale' ? 'formButtonActive' : 'formButton'}
+              className={type === 'sale' ? 'formButtonActive' : 'formButton'}
               id='type'
               value='sale'
               onClick={onMutate}
@@ -259,7 +262,7 @@ function EditListing() {
             </button>
             <button
               type='button'
-              className={type == 'rent' ? 'formButtonActive' : 'formButton'}
+              className={type === 'rent' ? 'formButtonActive' : 'formButton'}
               id='type'
               value='rent'
               onClick={onMutate}
